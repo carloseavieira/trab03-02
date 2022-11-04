@@ -35,7 +35,7 @@ public class Janela extends JFrame {
         p.add(BtTarefa);
 
         StringLista();
-        add(scrollPane);       
+        add(scrollPane);
     }
 
     private void StringLista(){
