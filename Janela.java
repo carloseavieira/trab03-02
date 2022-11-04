@@ -1,6 +1,5 @@
 import javax.swing.*;
 import java.awt.Dimension;
-import javax.swing.BorderFactory;
 
 public class Janela extends JFrame {
 
@@ -8,7 +7,7 @@ public class Janela extends JFrame {
     private LtTarefa LtTarefa;
 
     public Janela(){
-        setTitle("Tarefas a ser concluida");
+        setTitle("Tarefas Pendentes");
         setSize(500,500);
         setLocation(600, 200);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -36,18 +35,11 @@ public class Janela extends JFrame {
         p.add(BtTarefa);
 
         StringLista();
-        add(scrollPane);
-
-        p.setBorder(
-                BorderFactory.createCompoundBorder(
-                        BorderFactory.createCompoundBorder(
-                                BorderFactory.createTitledBorder("Tarefas"),
-                                BorderFactory.createEmptyBorder(10,10,10,10)),
-                        p.getBorder()));
+        add(scrollPane);       
     }
 
     private void StringLista(){
-        for(String s : LtTarefa.NumeroLista()){
+        for(String s : LtTarefa.NumLista()){
             p.add(criarItemDaLista(s));
             p.add(Box.createVerticalStrut(10));
             p.add(Box.createHorizontalStrut(30));
